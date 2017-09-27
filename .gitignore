@@ -1,0 +1,13 @@
+# Dependency Directories
+node_modules/
+bower_components/
+
+# Package lock json
+package-lock.json
+
+# OS X
+.DS_Store
+
+# Logs
+logs
+*.log
