@@ -1,13 +1,19 @@
-# Dependency Directories
+# Compiled directories
+build/
+
+# Dependency directories
 node_modules/
-bower_components/
 
-# Package lock json
-package-lock.json
+# Process env
+.env
 
-# OS X
+# Webpack Bundle file should be untracked at least until full deployment
+bundle.js
+
+# To prevent tracking of DS Store file
 .DS_Store
 
-# Logs
-logs
-*.log
+# To prevent tracking of package lock json file until full deployment
+package-lock.json
+
+.log
