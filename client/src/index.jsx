@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {BrowserRoute as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 import About from './components/about.jsx';
 
@@ -17,6 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        HELLo
         <Router>
           <div>
             <ul>
@@ -27,9 +28,9 @@ class App extends React.Component {
 
             <hr/>
 
-
+            {/* <Route exact path="/" component={Home}/> */}
             <Route path="/about" component={About}/>
-
+            {/* <Route path="/topics" component={Topics}/> */}
           </div>
         </Router>
       </div>

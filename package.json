@@ -4,7 +4,8 @@
   "description": "Yessengerey Bolatov's Portfolio",
   "main": "webpack.config.js",
   "scripts": {
-    "webwatch": "webpack -d --watch"
+    "webwatch": "webpack -d --watch",
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,9 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
+    "body-parser": "^1.18.2",
     "css-loader": "^0.28.7",
+    "express": "^4.16.2",
     "path": "^0.12.7",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -31,5 +34,8 @@
     "react-router-dom": "^4.2.2",
     "style-loader": "^0.19.0",
     "webpack": "^3.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
   }
 }
