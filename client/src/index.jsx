@@ -1,39 +1,57 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Contact from './components/contact.jsx';
+import Home from './components/home.jsx';
+import Projects from './components/projects/projects.jsx';
+import Experience from './components/experience/experience.jsx';
 
-import About from './components/about.jsx';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import {Tabs, Tab} from 'material-ui/Tabs';
+
+import SwipeableViews from 'react-swipeable-views';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: ''
+      items: '',
+      tabIndex: 0
     }
+
+    this.handleTabChange = this.handleTabChange.bind(this);
   }
 
+  handleTabChange(index) {
+    this.setState({
+      tabIndex: index
+    });
+  };
 
   render() {
     return (
-      <div>
-        HELLo
-        <Router>
-          <div>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/topics">Topics</Link></li>
-            </ul>
+      <MuiThemeProvider>
+        <div>
+          <Tabs
+            value={this.state.tabIndex}
+            onChange={this.handleTabChange}>
 
-            <hr/>
+            <Tab label="Home" value={0}/>
+            <Tab label="Projects" value={1}/>
+            <Tab label="Experience" value={2}/>
+            <Tab label="Contact" value={3}/>
 
-            {/* <Route exact path="/" component={Home}/> */}
-            <Route path="/about" component={About}/>
-            {/* <Route path="/topics" component={Topics}/> */}
-          </div>
-        </Router>
-      </div>
+          </Tabs>
+          <SwipeableViews
+            index={this.state.tabIndex}
+            onChangeIndex={this.handleTabChange}>
+            <Home />
+            <Projects />
+            <Experience />
+            <Contact />
+          </SwipeableViews>
+        </div>
+      </MuiThemeProvider>
     )
   }
 }
