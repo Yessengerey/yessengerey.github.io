@@ -1,14 +1,18 @@
+// React
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Components
 import Contact from './components/contact.jsx';
 import Home from './components/home.jsx';
 import Projects from './components/projects/projects.jsx';
 import Experience from './components/experience/experience.jsx';
 
+// Material UI
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {Tabs, Tab} from 'material-ui/Tabs';
 
+// Other
 import SwipeableViews from 'react-swipeable-views';
 
 class App extends React.Component {
