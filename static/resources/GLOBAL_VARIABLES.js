@@ -3,5 +3,6 @@ module.exports = {
   FULLNAME: 'Yessengerey Bolatov',
   FIRST_NAME: 'Yessengerey',
   LAST_NAME: 'Bolatov',
-  EMAIL: 'yes.murz@gmail.com'
+  EMAIL: 'yes.murz@gmail.com',
+  POSITION: 'Software Engineer'
 }

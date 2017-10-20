@@ -4,7 +4,11 @@ import React from 'react';
 // Material UI
 import Paper from 'material-ui/Paper';
 
+// Styling
 import styles from '../../../styles/home/home.css';
+
+// Variables
+import globalVars from '../../../static/resources/GLOBAL_VARIABLES.js';
 
 const style = {
   height: 500,
@@ -32,9 +36,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className={styles.home_container}>
+      <div className={styles.outer_home_container}>
+        <div className={styles.inner_home_container}>
           <div className={styles.profile_image_container} style={{backgroundImage: `url(${this.state.profileImgURL})`}}>
+          </div>
+          <div className={styles.profile_information}>
+            <span id={styles.position}>{globalVars.POSITION}</span>
+            <span id={styles.fullname}>{globalVars.FULLNAME}</span>
           </div>
           <div className={styles.introduction_container}>
             Brief introduction
