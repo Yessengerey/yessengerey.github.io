@@ -36,6 +36,15 @@ class Home extends React.Component {
         <div className={styles.home_container}>
           <div className={styles.profile_image_container} style={{backgroundImage: `url(${this.state.profileImgURL})`}}>
           </div>
+          <div className={styles.introduction_container}>
+            Brief introduction
+          </div>
+          <div className={styles.biography_container}>
+            Brief biography
+          </div>
+          <div className={styles.profiles_container}>
+            Profiles
+          </div>
         </div>
       </div>
     )
