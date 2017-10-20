@@ -13,10 +13,12 @@
 		    authDomain: "yessengerey-portfolio.firebaseapp.com",
 		    databaseURL: "https://yessengerey-portfolio.firebaseio.com",
 		    projectId: "yessengerey-portfolio",
-		    storageBucket: "",
+		    storageBucket: "gs://yessengerey-portfolio.appspot.com/",
 		    messagingSenderId: "602995473392"
 		  };
 		  firebase.initializeApp(config);
+			var storage = firebase.storage();
+			var storageRef = storage.ref();
 		</script>
 		<script type='text/javascript' src='/static/dist/bundle.js'></script>
 	</body>
