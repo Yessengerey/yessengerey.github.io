@@ -46,9 +46,17 @@ class Home extends React.Component {
           </div>
           <div className={styles.introduction_container}>
             Brief introduction
-          </div>
-          <div className={styles.biography_container}>
-            Brief biography
+            {/* <div>
+            {firedb.collection('users').get()
+              .then((snapshot) => {
+                snapshot.forEach((doc) => {
+                    console.log(doc.data());
+                });
+              })
+              .catch((err) => {
+                console.log('ERROR retrieving documents', err);
+              })}
+            </div> */}
           </div>
           <div className={styles.profiles_container}>
             Profiles
