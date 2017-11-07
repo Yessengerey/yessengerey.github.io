@@ -22,7 +22,11 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      profileImgURL: ''
+      profileImgURL: '',
+      profileDescription: '',
+      profileFullname: '',
+      profilePosition: '',
+      pageStage: 'loading'
     }
   }
 
@@ -31,37 +35,52 @@ class Home extends React.Component {
       this.setState({
         profileImgURL: url
       });
+    })
+    .then(() => {
+      firedb.collection('users').get()
+        .then((snapshot) => {
+          console.log(snapshot);
+          var yes_profile = snapshot.docs[0].data();
+          this.setState({
+            profileDescription: yes_profile.description
+          }, () => {
+            this.setState({
+              pageStage: 'finished'
+            });
+          });
+        })
+        .catch((err) => {
+          console.log('ERROR retrieving documents', err);
+        });
     });
+
+
   }
 
   render() {
+    let displayElements = <img src='/resources/gifs/loading_cube.gif'/>;
+
+    if (this.state.pageStage === 'loading') {
+      displayElements = <img src='/resources/gifs/loading_cube.gif' />;
+    } else if (this.state.pageStage === 'finished') {
+      displayElements = <div className={styles.inner_home_container}>
+        <div className={styles.profile_image_container} style={{backgroundImage: `url(${this.state.profileImgURL})`}}>
+        </div>
+        <div className={styles.profile_information}>
+          <span id={styles.position}>{globalVars.POSITION}</span>
+          <span id={styles.fullname}>{globalVars.FULLNAME}</span>
+        </div>
+        <div className={styles.introduction_container}>
+          {this.state.profileDescription}
+        </div>
+        <div className={styles.profiles_container}>
+          Profiles
+        </div>
+      </div>
+    }
     return (
       <div className={styles.outer_home_container}>
-        <div className={styles.inner_home_container}>
-          <div className={styles.profile_image_container} style={{backgroundImage: `url(${this.state.profileImgURL})`}}>
-          </div>
-          <div className={styles.profile_information}>
-            <span id={styles.position}>{globalVars.POSITION}</span>
-            <span id={styles.fullname}>{globalVars.FULLNAME}</span>
-          </div>
-          <div className={styles.introduction_container}>
-            Brief introduction
-            {/* <div>
-            {firedb.collection('users').get()
-              .then((snapshot) => {
-                snapshot.forEach((doc) => {
-                    console.log(doc.data());
-                });
-              })
-              .catch((err) => {
-                console.log('ERROR retrieving documents', err);
-              })}
-            </div> */}
-          </div>
-          <div className={styles.profiles_container}>
-            Profiles
-          </div>
-        </div>
+        {displayElements}
       </div>
     )
   }
