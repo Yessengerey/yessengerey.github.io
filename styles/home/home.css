@@ -3,6 +3,11 @@
   to {opacity: 1;}
 }
 
+/*@font-face {
+  font-family: Mont Medium;
+  src: url('../fonts/Montserrat-Medium.ttf');
+}*/
+
 .outer_home_container {
   animation-name: appear;
   animation-duration: 1s;
@@ -16,6 +21,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('/resources/images/sf_background.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .profile_image_container {
