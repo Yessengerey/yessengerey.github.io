@@ -33,7 +33,6 @@ class Home extends React.Component {
   componentWillMount() {
     firedb.collection('users').get()
       .then((snapshot) => {
-        console.log(snapshot);
         var yes_profile = snapshot.docs[0].data();
         this.setState({
           profileDescription: yes_profile.description
@@ -49,10 +48,10 @@ class Home extends React.Component {
   }
 
   render() {
-    let displayElements = <img src='/resources/gifs/loading_cube.gif'/>;
+    let displayElements = <img src='/static/resources/gifs/loading_cube.gif'/>;
 
     if (this.state.pageStage === 'loading') {
-      displayElements = <img src='/resources/gifs/loading_cube.gif' />;
+      displayElements = <img src='/static/resources/gifs/loading_cube.gif' />;
     } else if (this.state.pageStage === 'finished') {
       displayElements =
       <div className={styles.inner_home_container}>

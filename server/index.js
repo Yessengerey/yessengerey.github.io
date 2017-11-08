@@ -9,7 +9,7 @@ var PORT = 3000;
 app.set('port', PORT);
 
 // Necessary to serve the index.html page
-app.use(express.static(__dirname + '/../static'));
+app.use(express.static(__dirname + '/../'));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
