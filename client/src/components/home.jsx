@@ -31,12 +31,6 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
-    // storageRef.child('images/profile_image.jpeg').getDownloadURL().then(url => {
-    //   this.setState({
-    //     profileImgURL: url
-    //   });
-    // })
-    // .then(() => {
     firedb.collection('users').get()
       .then((snapshot) => {
         console.log(snapshot);
@@ -60,7 +54,8 @@ class Home extends React.Component {
     if (this.state.pageStage === 'loading') {
       displayElements = <img src='/resources/gifs/loading_cube.gif' />;
     } else if (this.state.pageStage === 'finished') {
-      displayElements = <div className={styles.inner_home_container}>
+      displayElements =
+      <div className={styles.inner_home_container}>
         <div className={styles.profile_image_container} style={{backgroundImage: `url(${PROFILE_IMAGE.src})`}}>
         </div>
         <div className={styles.profile_information}>
