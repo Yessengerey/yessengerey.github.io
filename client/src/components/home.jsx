@@ -28,6 +28,21 @@ class Home extends React.Component {
       profilePosition: '',
       pageStage: 'loading'
     }
+    this.profilesClickHandler = this.profilesClickHandler.bind(this);
+  }
+
+  profilesClickHandler(event) {
+    if (event.target.id === styles.facebook) {
+      window.open('https://www.facebook.com/yessengerey');
+    }
+
+    if (event.target.id === styles.linkedin) {
+      window.open('https://www.linkedin.com/in/yessengerey/');
+    }
+
+    if (event.target.id === styles.hackerrank) {
+      window.open('https://www.hackerrank.com/yes_murz');
+    }
   }
 
   componentWillMount() {
@@ -48,10 +63,10 @@ class Home extends React.Component {
   }
 
   render() {
-    let displayElements = <img src='/static/resources/gifs/loading_cube.gif'/>;
+    let displayElements = '';
 
     if (this.state.pageStage === 'loading') {
-      displayElements = <img src='/static/resources/gifs/loading_cube.gif' />;
+      displayElements = <div></div>;
     } else if (this.state.pageStage === 'finished') {
       displayElements =
       <div className={styles.inner_home_container}>
@@ -65,7 +80,18 @@ class Home extends React.Component {
           {this.state.profileDescription}
         </div>
         <div className={styles.profiles_container}>
-          Profiles
+          Check out my Profiles:
+          <div className={styles.profiles_buttons}>
+            <div onClick={this.profilesClickHandler} id={styles.facebook}>
+              Facebook
+            </div>
+            <div onClick={this.profilesClickHandler} id={styles.linkedin}>
+              LinkedIn
+            </div>
+            <div onClick={this.profilesClickHandler} id={styles.hackerrank}>
+              Hackerrank
+            </div>
+          </div>
         </div>
       </div>
     }
