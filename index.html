@@ -4,14 +4,20 @@
 		<title>Yessengerey</title>
 		<script type="text/javascript">
 			var sf_background = new Image();
-			sf_background.src = '/resources/images/sf_background.jpg';
+			sf_background.src = './static/resources/images/sf_background.jpg';
+		</script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+		<script src='config.js'></script>
+		<script type='text/javascript'>
+			var PROFILE_IMAGE = new Image();
+			storageRef.child('images/profile_image.jpeg').getDownloadURL().then(url => {
+	      PROFILE_IMAGE.src = url;
+	    });
 		</script>
 	</head>
 	<body>
 		<div id='app'></div>
-		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
-		<script src='config.js'></script>
 		<script type='text/javascript' src='/static/dist/bundle.js'></script>
 	</body>
 </html>
