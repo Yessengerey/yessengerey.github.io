@@ -2,3 +2,13 @@ body {
   font-family: 'Montserrat Medium';
   color: white;
 }
+
+@keyframes slideDown {
+  from {margin-top: -60px;}
+  to  {margin-top: 0px;}
+}
+
+.control_panel {
+  animation-name: slideDown;
+  animation-duration: 1s;
+}

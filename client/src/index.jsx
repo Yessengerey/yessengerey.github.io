@@ -41,6 +41,7 @@ class App extends React.Component {
       <MuiThemeProvider>
         <div>
           <Tabs
+            className={styles.control_panel}
             value={this.state.tabIndex}
             onChange={this.handleTabChange}>
 

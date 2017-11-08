@@ -46,9 +46,10 @@
   padding: 20px;
   width: 90%;
   margin: 10px;
-  background-color: rgba(56, 56, 56, 0.71);
+  background-color: rgba(56, 56, 56, 0.5);
   font-family: 'Exo Light';
   letter-spacing: 1px;
+  border-radius: 3px;
 }
 
 .profile_information span {
@@ -58,13 +59,14 @@
 
 .introduction_container {
   font-family: 'Exo Light';
-  background-color: rgba(56, 56, 56, 0.71);
+  background-color: rgba(56, 56, 56, 0.5);
   padding: 20px;
   letter-spacing: 1px;
   text-align: justify;
   line-height: 26px;
   width: 90%;
   margin: 10px;
+  border-radius: 3px;
 }
 
 #position {
