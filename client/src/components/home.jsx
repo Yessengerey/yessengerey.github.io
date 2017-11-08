@@ -31,30 +31,27 @@ class Home extends React.Component {
   }
 
   componentWillMount() {
-    storageRef.child('images/profile_image.jpeg').getDownloadURL().then(url => {
-      this.setState({
-        profileImgURL: url
-      });
-    })
-    .then(() => {
-      firedb.collection('users').get()
-        .then((snapshot) => {
-          console.log(snapshot);
-          var yes_profile = snapshot.docs[0].data();
+    // storageRef.child('images/profile_image.jpeg').getDownloadURL().then(url => {
+    //   this.setState({
+    //     profileImgURL: url
+    //   });
+    // })
+    // .then(() => {
+    firedb.collection('users').get()
+      .then((snapshot) => {
+        console.log(snapshot);
+        var yes_profile = snapshot.docs[0].data();
+        this.setState({
+          profileDescription: yes_profile.description
+        }, () => {
           this.setState({
-            profileDescription: yes_profile.description
-          }, () => {
-            this.setState({
-              pageStage: 'finished'
-            });
+            pageStage: 'finished'
           });
-        })
-        .catch((err) => {
-          console.log('ERROR retrieving documents', err);
         });
-    });
-
-
+      })
+      .catch((err) => {
+        console.log('ERROR retrieving documents', err);
+      });
   }
 
   render() {
@@ -64,7 +61,7 @@ class Home extends React.Component {
       displayElements = <img src='/resources/gifs/loading_cube.gif' />;
     } else if (this.state.pageStage === 'finished') {
       displayElements = <div className={styles.inner_home_container}>
-        <div className={styles.profile_image_container} style={{backgroundImage: `url(${this.state.profileImgURL})`}}>
+        <div className={styles.profile_image_container} style={{backgroundImage: `url(${PROFILE_IMAGE.src})`}}>
         </div>
         <div className={styles.profile_information}>
           <span id={styles.position}>{globalVars.POSITION}</span>
