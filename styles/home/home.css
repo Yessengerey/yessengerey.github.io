@@ -10,7 +10,7 @@
 
 .outer_home_container {
   animation-name: appear;
-  animation-duration: 1s;
+  animation-duration: 3s;
 }
 
 .inner_home_container {
@@ -46,8 +46,9 @@
   padding: 20px;
   width: 90%;
   margin: 10px;
-  background-color: rgba(52, 66, 70, 0.75);
+  background-color: rgba(56, 56, 56, 0.71);
   font-family: 'Exo Light';
+  letter-spacing: 1px;
 }
 
 .profile_information span {
@@ -57,7 +58,7 @@
 
 .introduction_container {
   font-family: 'Exo Light';
-  background-color: rgba(52, 66, 70, 0.75);
+  background-color: rgba(56, 56, 56, 0.71);
   padding: 20px;
   letter-spacing: 1px;
   text-align: justify;
