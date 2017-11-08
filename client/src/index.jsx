@@ -16,6 +16,9 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 // Other
 import SwipeableViews from 'react-swipeable-views';
 
+// styles
+import styles from '../../styles/index.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);

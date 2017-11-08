@@ -1,0 +1,29 @@
+@font-face {
+  font-family: Montserrat Medium;
+  src: url('/styles/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+  font-family: Exo Light;
+  src: url('/styles/fonts/Exo-Light.ttf');
+}
+
+@font-face {
+  font-family: Exo Regular;
+  src: url('/styles/fonts/Exo-Regular.ttf');
+}
+
+@font-face {
+  font-family: Exo Semi-Bold;
+  src: url('/styles/fonts/Exo-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: Exo Extra-Light;
+  src: url('/styles/fonts/Exo-ExtraLight.ttf');
+}
+
+@font-face {
+  font-family: Exo Thin;
+  src: url('/styles/fonts/Exo-Thin.ttf');
+}

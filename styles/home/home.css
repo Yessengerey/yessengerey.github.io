@@ -43,17 +43,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  width: 100%;
+  padding: 20px;
   width: 90%;
-  border-bottom: 2px solid;
-  border-top: 2px solid;
   margin: 10px;
+  background-color: rgba(52, 66, 70, 0.75);
+  font-family: 'Exo Light';
 }
 
 .profile_information span {
   padding: 5px;
   text-align: center;
+}
+
+.introduction_container {
+  font-family: 'Exo Light';
+  background-color: rgba(52, 66, 70, 0.75);
+  padding: 20px;
+  letter-spacing: 1px;
+  text-align: justify;
+  line-height: 26px;
+  width: 90%;
+  margin: 10px;
 }
 
 #position {
