@@ -32,6 +32,10 @@ class Home extends React.Component {
   }
 
   profilesClickHandler(event) {
+    if (event.target.id === styles.github) {
+      window.open('https://github.com/Yessengerey');
+    }
+
     if (event.target.id === styles.facebook) {
       window.open('https://www.facebook.com/yessengerey');
     }
@@ -77,11 +81,21 @@ class Home extends React.Component {
           <span id={styles.fullname}>{globalVars.FULLNAME}</span>
         </div>
         <div className={styles.introduction_container}>
+          <div className={styles.introduction_title}>Introduction</div>
           {this.state.profileDescription}
         </div>
+        <div className={styles.skills_container}>
+          <div className={styles.skills_title}>Skills</div>
+        </div>
+        <div className={styles.interests_container}>
+          <div className={styles.interests_title}>Interests</div>
+        </div>
         <div className={styles.profiles_container}>
-          Check out my Profiles:
+          Check me out on:
           <div className={styles.profiles_buttons}>
+            <div onClick={this.profilesClickHandler} id={styles.github}>
+              GitHub
+            </div>
             <div onClick={this.profilesClickHandler} id={styles.facebook}>
               Facebook
             </div>
