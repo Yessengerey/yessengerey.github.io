@@ -3,10 +3,6 @@ body {
   color: white;
 }
 
-html {
-  background-image: url('/static/resources/images/background_pattern.jpg');
-}
-
 @keyframes slideDown {
   from {margin-top: -60px;}
   to  {margin-top: 0px;}
