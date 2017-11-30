@@ -71,8 +71,8 @@
   width: 90%;
   margin: 10px;
   border-radius: 3px;
-  -webkit-transition: background-color 0.5s, width 1s;
-  transition: background-color 0.5s, width 1s;
+  -webkit-transition: background-color 0.5s, border-radius 1s, width 1s;
+  transition: background-color 0.5s, border-radius 1s, width 1s;
 }
 
 .profile_information:hover,
@@ -87,7 +87,7 @@
   line-height: 26px;
   width: 92%;
   margin: 10px;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 
 .profiles_container,
