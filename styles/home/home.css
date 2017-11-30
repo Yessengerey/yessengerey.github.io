@@ -71,10 +71,28 @@
   width: 90%;
   margin: 10px;
   border-radius: 3px;
+  -webkit-transition: background-color 0.5s, width 1s;
+  transition: background-color 0.5s, width 1s;
 }
 
-.profiles_container {
-  text-align: center;
+.profile_information:hover,
+.introduction_container:hover,
+.profiles_container:hover,
+.skills_container:hover,
+.interests_container:hover {
+  font-family: 'Exo Light';
+  background-color: rgba(56, 56, 56, 0.8);
+  padding: 20px;
+  letter-spacing: 1px;
+  line-height: 26px;
+  width: 92%;
+  margin: 10px;
+  border-radius: 3px;
+}
+
+.profiles_container,
+.introduction_container {
+  text-align: center !important;
 }
 
 .profiles_buttons {

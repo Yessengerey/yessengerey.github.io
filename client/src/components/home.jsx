@@ -26,6 +26,7 @@ class Home extends React.Component {
       profileDescription: '',
       profileFullname: '',
       profilePosition: '',
+      profileSkills: '',
       pageStage: 'loading'
     }
     this.profilesClickHandler = this.profilesClickHandler.bind(this);
@@ -53,8 +54,12 @@ class Home extends React.Component {
     firedb.collection('users').get()
       .then((snapshot) => {
         var yes_profile = snapshot.docs[0].data();
+
+        var skills = Object.entries(yes_profile.skills);
+
         this.setState({
-          profileDescription: yes_profile.description
+          profileDescription: yes_profile.description,
+          profileSkills: skills
         }, () => {
           this.setState({
             pageStage: 'finished'
@@ -86,6 +91,9 @@ class Home extends React.Component {
         </div>
         <div className={styles.skills_container}>
           <div className={styles.skills_title}>Skills</div>
+          <div>
+            {this.state.profileSkills.map((skill, id) => <div key={id}>{skill[1].title}</div>)}            
+          </div>
         </div>
         <div className={styles.interests_container}>
           <div className={styles.interests_title}>Interests</div>
